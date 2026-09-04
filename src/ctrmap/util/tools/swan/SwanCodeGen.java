@@ -223,7 +223,7 @@ public class SwanCodeGen {
 		if (cppName != null) { //same as C type
 			String cppLocalName = cppName.substring(cppName.lastIndexOf(":") + 1);
 			if (cName == null) {
-				out.println("namespace " + cppNamespace + " { struct " + cppLocalName + "; }");
+				out.println("SWAN_NAMESPACE(" + cppNamespace + ", " + cppLocalName + ")");
 			} else {
 				if (cppLocalName.equals(cName)) {
 					out.println("SWAN_CPPTYPE(" + cppNamespace + ", " + cName + ")");
